@@ -1,0 +1,34 @@
+
+<div class="container">
+    
+    <h1 class="text-center"> 
+       View Data</h1>
+          <table class="table table-bordered">
+         <tr>
+             <th>Company Name</th>
+             <th>Drive Date</th>
+             <th>Position</th>
+             <th>Package Offered</th>
+             <th>Vacancies</th>
+             <th> Location </th>
+             <th> Contact Personal Details </th>
+             <th> Action </th>
+         </tr>
+               <ng-container *ngFor="let s of res;let i=index">
+                   <tr *ngIf="temp==s.email">
+                    <td>{{s.cname}}</td>
+                    <td>{{s.driveDate}}</td>
+                     <td>{{s.position}}</td>
+                     <td>{{s.packageOffered}}</td>
+                      <td>{{s.vacanciesAvailable}}</td>
+                      <td>{{s.location}}</td>
+                      <td>{{s.contactPersonDetails}}</td>
+                      
+                     <td>
+                         <button input type="text" class="btn btn-dark" ><a [routerLink]="['/driveup',i]">Edit</a></button>&nbsp;
+                         <button input type="text" class="btn btn-danger" (click)="deleteData(i)">Delete</button>
+                         </td>
+                        </tr>
+                </ng-container>
+         </table>
+   

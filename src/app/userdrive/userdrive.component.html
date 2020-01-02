@@ -1,0 +1,40 @@
+<br>
+<br>
+
+<div class="con">
+    <label for="name" class="cols-sm-2 control-label">
+        <h4>Employees</h4>
+    </label>
+    <select class="form-control" (change)="sel($event.target.value)">
+        <option value="" disabled selected></option>
+        <option *ngFor="let x of arr">{{x}}</option>
+    </select>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>Company Name</th>
+            <th>Drive Date</th>
+            <th>Position</th>
+            <th>Package Offered</th>
+            <th>Vacancies</th>
+            <th> Location </th>
+            <th> Contact Personal Details </th>
+
+        </tr>
+        <ng-container *ngFor="let s of res">
+            <tr *ngIf="temp=='all' || temp==s.contactPersonDetails">
+                <td>{{s.cname}}</td>
+                <td>{{s.driveDate}}</td>
+                <td>{{s.position}}</td>
+                <td>{{s.packageOffered}}</td>
+                <td>{{s.vacanciesAvailable}}</td>
+                <td>{{s.location}}</td>
+                <td>{{s.contactPersonDetails}}</td>
+            </tr>
+        </ng-container>
+    </table>

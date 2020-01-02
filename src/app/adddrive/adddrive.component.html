@@ -1,0 +1,98 @@
+<br>
+<div class="container">
+    <h2 class="text-center">Add Employee</h2>
+    <form class="form-horizontal" [formGroup]="drivetracker" novalidate>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">CompanyName:<span class="t">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" formControlName="cname" placeholder="name"> <br>
+                <div class="alert alert-danger"
+                    *ngIf="drivetracker.controls['cname'].invalid && drivetracker.controls['cname'].touched">
+                    <div *ngIf="drivetracker.controls['cname'].errors.required">Company Name is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">DriveDate:<span class="t">*</span></label>
+            <div class="col-sm-8">
+                <input type="date" class="form-control" formControlName="driveDate" placeholder="Drive Date"> <br>
+                <div class="alert alert-danger"
+                    *ngIf="drivetracker.controls['driveDate'].invalid && drivetracker.controls['driveDate'].touched">
+                    <div *ngIf="drivetracker.controls['driveDate'].errors.required">DriveDate is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pass">position:<span class="t">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" formControlName="position" placeholder="position"> <br>
+                <div class="alert alert-danger"
+                    *ngIf="drivetracker.controls['position'].invalid && drivetracker.controls['position'].touched">
+                    <div *ngIf="drivetracker.controls['position'].errors.required">Position is Required</div>
+                    <div *ngIf="drivetracker.controls['position'].errors.pattern">number not allowed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="mobile">PackageOffered:<span class="t">*</span></label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" formControlName="packageOffered" placeholder="packageOffered"> <br>
+                <div class="alert alert-danger"
+                    *ngIf="drivetracker.controls['packageOffered'].invalid && drivetracker.controls['packageOffered'].touched">
+                    <div *ngIf="drivetracker.controls['packageOffered'].errors.required">Package is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="mobile">vacanciesAvailable:<span class="t">*</span></label>
+            <div class="col-sm-8">
+                <input type="number" class="form-control" formControlName="vacanciesAvailable"
+                    placeholder="vacanciesAvailable"> <br>
+                <div class="alert alert-danger"
+                    *ngIf="drivetracker.controls['vacanciesAvailable'].invalid && drivetracker.controls['vacanciesAvailable'].touched">
+                    <div *ngIf="drivetracker.controls['vacanciesAvailable'].errors.required">Vacancies is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="mobile">location:<span class="t">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" formControlName="location" placeholder="location"> <br>
+                <div class="alert alert-danger"
+                    *ngIf="drivetracker.controls['location'].invalid && drivetracker.controls['location'].touched">
+                    <div *ngIf="drivetracker.controls['location'].errors.required">Location is Required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="mobile">contactPersonDetails:<span class="t">*</span></label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" formControlName="contactPersonDetails"
+                    placeholder="contactPersonDetails"> <br>
+                <div class="alert alert-danger"
+                    *ngIf="drivetracker.controls['contactPersonDetails'].invalid && drivetracker.controls['contactPersonDetails'].touched">
+                    <div *ngIf="drivetracker.controls['contactPersonDetails'].errors.required">contactPersonDetails is
+                        Required</div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="adrive()" value="Submit"
+            [disabled]="drivetracker.invalid">Submit</button>
+
+
+    </form>
+
+
+    <!-- <br>
+  <h1>{{drive | json}}</h1>
+  {{drivetracker.value | json}}
+  <br> -->
+</div>
