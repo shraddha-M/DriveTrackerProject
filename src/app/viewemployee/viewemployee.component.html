@@ -1,4 +1,4 @@
-<body>
+
 <div class="container">
     
     
@@ -9,22 +9,20 @@
              <th>id</th>
              <th>Name</th>
              <th>Email</th>
-             <!-- <th>Password</th> -->
              <th>Mobno</th>
-             <th> Action </th>
+             <th>Action</th>
          </tr>
                <tr *ngFor="let s of lib;let i=index">
                     <td>{{s.id}}</td>
                     <td>{{s.name}}</td>
-                     <!-- <td>{{s.email}}</td> -->
-                     <td>{{s.password}}</td>
+                     <td>{{s.email}}</td>
                       <td>{{s.mobno}}</td>
                      <td>
                          <button class="btn btn-dark" ><a [routerLink]="['/update',i]">Edit</a></button>&nbsp;
-                         <button class="btn btn-danger" (click)="deleteData(i)">Delete</button>&nbsp;
-                         <button>Send Email</button>
-                         </td>
+                         <button class="btn btn-info" (click)="deleteData(i)">Delete</button>&nbsp;
+                         <button class="btn btn-secondary" (click)="sendMail(i)">Send Email</button>
+                     </td>
                 </tr>
          </table>
     
-        
+        </div>

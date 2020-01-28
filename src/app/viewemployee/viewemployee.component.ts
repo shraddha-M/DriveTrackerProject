@@ -30,9 +30,20 @@ this.fetchdata();
     });
     
   }
-  fetchdata(){
+  fetchdata()
+  {
     this.sc.viewEmp().subscribe((d: any) => this.lib = d);
   }
+
+
+  sendMail(i)
+  {
+     this.obj=this.lib[i];
+     
+     this.sc.sendMail(this.obj).subscribe();
+  
+    }
+    
 
 
 
