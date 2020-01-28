@@ -1,0 +1,23 @@
+.t{
+    color: red;
+}
+
+
+   body{
+    background:url("src/assets/download.JPEG");
+    padding-top:200px;
+    padding-bottom:200px;
+    background-size: cover;
+  }   
+
+ 
+
+
+.container
+{
+    height: 300px;
+   width: 700px;
+   margin-top: 10px;
+   margin-left: 550px;
+   align-content: center;
+}
