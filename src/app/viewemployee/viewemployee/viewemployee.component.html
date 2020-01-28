@@ -1,0 +1,28 @@
+
+<div class="container">
+    
+    
+    <h1 class="text-center"> 
+       View Data</h1>
+          <table class="table table-bordered">
+         <tr>
+             <th>id</th>
+             <th>Name</th>
+             <th>Email</th>
+             <th>Mobno</th>
+             <th>Action</th>
+         </tr>
+               <tr *ngFor="let s of lib;let i=index">
+                    <td>{{s.id}}</td>
+                    <td>{{s.name}}</td>
+                     <td>{{s.email}}</td>
+                      <td>{{s.mobno}}</td>
+                     <td>
+                         <button class="btn btn-dark" ><a [routerLink]="['/update',i]">Edit</a></button>&nbsp;
+                         <button class="btn btn-info" (click)="deleteData(i)">Delete</button>&nbsp;
+                         <button class="btn btn-secondary" (click)="sendMail(i)">Send Email</button>
+                     </td>
+                </tr>
+         </table>
+    
+        </div>
